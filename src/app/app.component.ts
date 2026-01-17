@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngMat';
+  notifications = 1;
+  matBadgeOverlapFlag: boolean = false;
+  showSpinner:boolean = false;
+  opened: boolean = false;
+  
+  loadData() {
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 5000);
+  }
+
+  log(state: any) {
+    console.log('Dropdown is now: ', state);
+  }
 }
