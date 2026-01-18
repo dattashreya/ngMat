@@ -149,11 +149,45 @@
 </mat-sidenav-container>
 
 <!-- ------------------------- material menu --------------------------- -->
+<!-- menu with 3 item-lists -->
 <div>
-  <button mat-button [matMenuTriggerFor]="appMenuItem">Menu</button>
+  <button mat-button [matMenuTriggerFor]="appMenuItem" xPosition="after" yPosition="below" class="center">Menu</button>
   <mat-menu #appMenuItem="matMenu">
     <button mat-menu-item>Profile</button>
-    <button mat-menu-item>Settings</button>
+    <button mat-menu-item [matMenuTriggerFor]="submenu">Settings</button>
     <button mat-menu-item>Logout</button>
   </mat-menu>
 </div>
+<!-- menu with sub item-lists or Nested Menu list -->
+<div>
+  <mat-menu #submenu="matMenu">
+    <button mat-menu-item>zoom in</button>
+    <button mat-menu-item>zoom out</button>
+    <button mat-menu-item>extension</button>
+  </mat-menu>
+</div>
+<div>
+  <mat-menu #lazymenu="matMenu">
+    <ng-template matMenuContent let-name="name" let-age="age">
+      <button mat-menu-item>settings</button>
+      <button mat-menu-item>profile {{age}}</button>
+      <button mat-menu-item>logout {{name}}</button>
+    </ng-template>
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="lazymenu" [matMenuTriggerData]="{name: 'shreya', age: 10}">shreya</button>
+  <button [matMenuTriggerFor]="lazymenu" [matMenuTriggerData]="{name: 'shreya_ngmat_course', age: 13}">
+    shreya_ngmat_course</button>
+</div>
+<!-- --------------------------- material list ------------------------- -->
+  <mat-list role="list">
+    <mat-list-item role="listitem">Item 1
+      <mat-icon matListIcon>home</mat-icon>
+    </mat-list-item>
+    <mat-list-item role="listitem">Item 2
+      <mat-icon matListIcon>info</mat-icon>
+    </mat-list-item>
+    <mat-list-item role="listitem">Item 3
+      <mat-icon matListIcon>settings</mat-icon>
+    </mat-list-item>
+  </mat-list>

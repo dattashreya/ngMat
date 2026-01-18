@@ -10,6 +10,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
 
 const materialModule = [
   MatButtonModule,
@@ -21,7 +22,8 @@ const materialModule = [
   MatProgressBarModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatMenuModule
+  MatMenuModule,
+  MatListModule
 ]
 @NgModule({
   declarations: [],
