@@ -1,0 +1,7 @@
+mat-grid-list {
+  background-color: aquamarine;
+}
+mat-grid-tile {
+  background-color: rgb(0, 0, 0);
+  color: bisque;
+}
